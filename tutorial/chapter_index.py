@@ -620,12 +620,58 @@ chapters = {
 
 ### Start Cytoscape Docs
 
-    'elements': {
+    'cytoscape-elements': {
         'url': '/cytoscape/elements',
         'content': tutorial.cytoscape.elements_chapter.layout,
         'name': 'Cytoscape Elements',
         'description': '''
-        A comprehensive overview of elements declaration and manipulation. 
+        An overview of elements declaration and manipulation. 
+        '''
+    },
+
+    'cytoscape-layout': {
+        'url': '/cytoscape/layout',
+        'content': tutorial.cytoscape.layout_chapter.layout,
+        'name': 'Cytoscape Layouts',
+        'description': '''
+        Description of built-in layouts, and how to modify its properties. 
+        '''
+    },
+
+    'cytoscape-styling': {
+        'url': '/cytoscape/styling',
+        'content': tutorial.cytoscape.styling_chapter.layout,
+        'name': 'Cytoscape Styling',
+        'description': '''
+        Learn how to style elements with a CSS-like syntax
+        '''
+    },
+
+    'cytoscape-callbacks': {
+        'url': '/cytoscape/callbacks',
+        'content': tutorial.cytoscape.callbacks_chapter.layout,
+        'name': 'Cytoscape Callbacks',
+        'description': '''
+        Learn how to combine Dash Callbacks to update your Cytoscape object
+        '''
+    },
+
+    'cytoscape-events': {
+        'url': '/cytoscape/events',
+        'content': tutorial.cytoscape.events_chapter.layout,
+        'name': 'Cytoscape events',
+        'description': '''
+        Overview of user-interaction events that trigger callbacks in Dash,
+        and how to use it to update itself
+        '''
+    },
+
+    'cytoscape-applications': {
+        'url': '/cytoscape/applications',
+        'content': tutorial.cytoscape.applications_chapter.layout,
+        'name': 'Cytoscape applications',
+        'description': '''
+        Examples of applications in social network analysis and bioinformatics
         '''
     },
 

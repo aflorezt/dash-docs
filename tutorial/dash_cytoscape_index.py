@@ -124,7 +124,7 @@ layout = html.Div([
             - Simple integrations with HTML components
             - Different types of data returned
             - Node versus edges callbacks
-            = Tap, hover or select callbacks
+            - Tap, hover or select callbacks
             '''
         ),
 
