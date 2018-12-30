@@ -65,9 +65,10 @@ layout = html.Div([
             Elements declaration in Cytoscape are designed to be clear, simple,
             and JSON-friendly. This chapter will get you started 
             with examples for:
-            - A
-            - B
-            - C
+            - Data and position dictionaries 
+            - Mutability properties
+            - Defining groups and classes
+            - Compound nodes
             '''
         ),
 
