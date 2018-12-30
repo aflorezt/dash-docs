@@ -21,7 +21,9 @@ from tutorial import styles
 layout = html.Div([
 
     dcc.Markdown(dedent('''
-    # Elements
+    # Events Callbacks for User Interactions
+
     ''')),
+
 
 ])
