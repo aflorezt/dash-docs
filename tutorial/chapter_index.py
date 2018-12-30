@@ -2,6 +2,7 @@ import tutorial
 from tutorial import auth
 from tutorial import core_component_examples as examples
 from tutorial import core_components
+from tutorial import cytoscape
 from tutorial import d3
 from tutorial import dash_cytoscape_index
 from tutorial import dash_deployment_server
@@ -616,6 +617,28 @@ chapters = {
     },
 
 ### End DataTable Docs
+
+### Start Cytoscape Docs
+
+    'elements': {
+        'url': '/cytoscape/elements',
+        'content': tutorial.cytoscape.elements_chapter.layout,
+        'name': 'Cytoscape Elements',
+        'description': '''
+        A comprehensive overview of elements declaration and manipulation. 
+        '''
+    },
+
+    'cytoscape-reference': {
+        'url': '/cytoscape/reference',
+        'content': tutorial.cytoscape.reference_chapter.layout,
+        'name': 'Cytoscape Reference',
+        'description': '''
+        A comprehensive list of all of the Cytoscape properties.
+        '''
+    },
+
+### End Cytoscape Docs
 
     'search': {
         'url': '/search',
