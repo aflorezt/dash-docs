@@ -17,11 +17,36 @@ from tutorial import styles
 #     for example in ['dropdown_per_column.py', 'dropdown_per_row.py']
 # }
 
+my_stylesheet = [
+    # Group selectors
+    {
+        'selector': 'node',
+        'style': {
+            'content': 'data(label)'
+        }
+    },
+
+    # Class selectors
+    {
+        'selector': '.red',
+        'style': {
+            'background-color': 'red',
+            'line-color': 'red'
+        }
+    },
+    {
+        'selector': '.triangle',
+        'style': {
+            'shape': 'triangle'
+        }
+    }
+]
+
 Display = CreateDisplay({
-    'dash_cytoscape': dash_cytoscape
+    'dash_cytoscape': dash_cytoscape,
+    'my_stylesheet': my_stylesheet
 })
 
-# - Defining groups and classes
 # - Compound nodes
 
 layout = html.Div([
@@ -133,11 +158,92 @@ layout = html.Div([
     > parameters such as `autoungrabify` or `autounselectify`. Please refer to
     > the reference for more information.
     
-    ## Classes and Groups
+    ## Classes
     
+    Sometimes, you want to give your elements a specific class in order to 
+    distinguish them from others. This is especially useful when you want to 
+    perform specific actions using a selector, for example changing the style
+    of an element based on its class. We modify the previous example by giving
+    the elements a class or multiple classes (separated by a space), and 
+    define a stylesheet that modifies the elements based on those classes. 
+    ''')),
+
+    Display('''
+    dash_cytoscape.Cytoscape(
+        id='cytoscape',
+        layout={'name': 'preset'},
+        style={'width': '100%', 'height': '400px'},
+        stylesheet=my_stylesheet,
+        elements=[
+            {
+                'data': {'id': 'one', 'label': 'Modified Color'},
+                'position': {'x': 75, 'y': 75},
+                'classes': 'red' # Single class
+            },
+            {
+                'data': {'id': 'two', 'label': 'Modified Shape'},
+                'position': {'x': 75, 'y': 200},
+                'classes': 'triangle' # Single class
+            },
+            {
+                'data': {'id': 'three', 'label': 'Both Modified'},
+                'position': {'x': 200, 'y': 75},
+                'classes': 'red triangle' # Multiple classes
+            },
+            {
+                'data': {'id': 'four', 'label': 'Regular'},
+                'position': {'x': 200, 'y': 200}
+            },
+            {'data': {'source': 'one', 'target': 'two'}, 'classes': 'red'},
+            {'data': {'source': 'two', 'target': 'three'}},
+            {'data': {'source': 'three', 'target': 'four'}, 'classes': 'red'},
+            {'data': {'source': 'two', 'target': 'four'}},
+        ]
+    )
+    '''),
+
+    dcc.Markdown(dedent('''
+    The stylesheet parameter will be described in depth in part 3 of this 
+    guide. We will show extensive examples of using selectors to style 
+    groups, classes, and data value comparisons. Expand below if you still
+    want to take a look at the stylesheet used above.
+    ''')),
+
+    html.Details(open=False, children=[
+        html.Summary('View the Stylesheet'),
+        dcc.SyntaxHighlighter(dedent('''
+        my_stylesheet = [
+            # Group selectors
+            {
+                'selector': 'node',
+                'style': {
+                    'content': 'data(label)'
+                }
+            },
+        
+            # Class selectors
+            {
+                'selector': '.red',
+                'style': {
+                    'background-color': 'red',
+                    'line-color': 'red'
+                }
+            },
+            {
+                'selector': '.triangle',
+                'style': {
+                    'shape': 'triangle'
+                }
+            }
+        ]
+        '''))
+    ]),
+
+    html.Hr(),
+
+    dcc.Markdown(dedent('''
+    ## Compound Nodes
     
     '''))
-
-
 
 ])
